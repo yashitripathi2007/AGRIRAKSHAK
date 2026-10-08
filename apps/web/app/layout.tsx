@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./styles.css";
+import "leaflet/dist/leaflet.css";
+import { OfflineStatus } from "@/features/offline/offline-status";
 
 export const metadata: Metadata = {
   title: "AgriRakshak",
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><OfflineStatus />{children}</body>
     </html>
   );
 }
